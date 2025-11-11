@@ -1,0 +1,12 @@
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px hsl(var(--primary)), 0 0 20px hsl(var(--primary));
+  }
+  to {
+    text-shadow: 0 0 20px hsl(var(--secondary)), 0 0 30px hsl(var(--secondary));
+  }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
