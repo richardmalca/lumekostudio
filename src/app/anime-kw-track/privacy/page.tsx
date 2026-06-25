@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Política de Privacidad - Anime KW Track",
     description:
-        "Política de Privacidad de la aplicación móvil Anime KW Track.",
+        "Política de Privacidad de la aplicación móvil Anime KW Track. Conozca cómo gestionamos los datos de inicio de sesión con Google.",
     robots: "index, follow",
 };
 
@@ -15,7 +15,7 @@ export default function PrivacyPolicy() {
                     Política de Privacidad - Anime KW Track
                 </h1>
                 <p className="text-sm text-slate-500 dark:text-slate-400">
-                    Última actualización: Marzo 2026
+                    Última actualización: Junio 2026
                 </p>
             </header>
 
@@ -30,44 +30,69 @@ export default function PrivacyPolicy() {
 
             <section className="mb-8">
                 <h2 className="text-xl font-semibold mb-3 border-b-2 border-slate-100 dark:border-slate-800 pb-2">
-                    1. Información que no recopilamos
+                    1. Datos que recopilamos
                 </h2>
                 <p className="mb-3">
-                    Anime KW Track es una aplicación diseñada para ser utilizada
-                    de forma anónima. No recopilamos, solicitamos ni tenemos
-                    acceso a ningún tipo de Datos Personales Identificables
-                    (PII), tales como:
+                    Anime KW Track puede utilizarse de forma completamente
+                    anónima. Sin embargo, si elige iniciar sesión con{" "}
+                    <strong>Google Sign-In</strong>, la aplicación accede
+                    únicamente a su{" "}
+                    <strong>dirección de correo electrónico</strong> con los
+                    siguientes fines exclusivos:
                 </p>
                 <ul className="list-disc pl-6 space-y-1">
                     <li>
-                        Nombres, direcciones de correo electrónico o números de
-                        teléfono.
+                        Personalizar el envío de notificaciones push sobre
+                        nuevos episodios de los anime que sigue.
                     </li>
-                    <li>Identificadores de cuentas o perfiles sociales.</li>
-                    <li>Acceso a contactos, cámara o micrófono.</li>
+                    <li>
+                        Guardar y sincronizar sus preferencias (series
+                        favoritas, configuración) entre dispositivos o
+                        reinstalaciones.
+                    </li>
                 </ul>
                 <p className="mt-3">
-                    No se requiere registro ni inicio de sesión para utilizar
-                    ninguna de las funcionalidades de la aplicación.
+                    <strong>No accedemos</strong> al contenido de su bandeja de
+                    entrada, calendarios, contactos ni a ningún otro dato de su
+                    cuenta de Google. El inicio de sesión es completamente
+                    opcional; todas las funciones principales de la aplicación
+                    están disponibles sin crear una cuenta.
                 </p>
             </section>
 
             <section className="mb-8">
                 <h2 className="text-xl font-semibold mb-3 border-b-2 border-slate-100 dark:border-slate-800 pb-2">
-                    2. Uso de Internet
+                    2. Datos que NO recopilamos
+                </h2>
+                <p className="mb-3">
+                    En ningún caso recopilamos:
+                </p>
+                <ul className="list-disc pl-6 space-y-1">
+                    <li>Nombres completos, números de teléfono ni direcciones físicas.</li>
+                    <li>Contraseñas ni credenciales de ningún servicio.</li>
+                    <li>Acceso a cámara, micrófono o lista de contactos.</li>
+                    <li>Datos de pago o información financiera.</li>
+                </ul>
+            </section>
+
+            <section className="mb-8">
+                <h2 className="text-xl font-semibold mb-3 border-b-2 border-slate-100 dark:border-slate-800 pb-2">
+                    3. Uso de Internet
                 </h2>
                 <p>
-                    La aplicación utiliza su conexión a Internet exclusivamente
-                    para obtener información actualizada sobre los estrenos de
-                    anime. Esta comunicación se realiza directamente con los
-                    servidores de información y no involucra el envío de ningún
-                    dato del usuario.
+                    La aplicación utiliza su conexión a Internet para obtener
+                    información actualizada sobre los estrenos de anime y, en
+                    caso de haber iniciado sesión con Google, para sincronizar
+                    sus preferencias y gestionar las notificaciones. Ninguna
+                    comunicación involucra el envío de datos personales más allá
+                    del identificador de correo electrónico necesario para las
+                    funciones descritas.
                 </p>
             </section>
 
             <section className="mb-8">
                 <h2 className="text-xl font-semibold mb-3 border-b-2 border-slate-100 dark:border-slate-800 pb-2">
-                    3. Uso de la ubicación
+                    4. Uso de la ubicación
                 </h2>
                 <p className="mb-3">
                     Anime KW Track puede solicitar acceso a la ubicación de su
@@ -95,23 +120,29 @@ export default function PrivacyPolicy() {
 
             <section className="mb-8">
                 <h2 className="text-xl font-semibold mb-3 border-b-2 border-slate-100 dark:border-slate-800 pb-2">
-                    4. Almacenamiento local
+                    5. Almacenamiento local y en la nube
                 </h2>
                 <p>
-                    Todos los datos generados por el usuario, como listas de
-                    seguimiento, favoritos o preferencias de configuración, se
-                    almacenan de forma local y exclusiva en su dispositivo
-                    móvil. El desarrollador no tiene acceso a esta información y
-                    no se guarda ninguna copia en la nube ni en servidores
-                    propios.
+                    Por defecto, los datos generados por el usuario (listas de
+                    seguimiento, favoritos, configuración) se almacenan de forma
+                    local en su dispositivo. Si ha iniciado sesión con Google,
+                    sus preferencias se sincronizan también en nuestros
+                    servidores asociados a su correo electrónico, con el único
+                    fin de permitir la personalización de notificaciones y la
+                    recuperación de sus datos ante un cambio de dispositivo.
+                    Puede eliminar su cuenta y datos asociados contactándonos en{" "}
+                    <span className="font-mono text-blue-600 dark:text-blue-400">
+                        soporte@lumekostudio.com
+                    </span>
+                    .
                 </p>
             </section>
 
             <section className="mb-8">
                 <h2 className="text-xl font-semibold mb-3 border-b-2 border-slate-100 dark:border-slate-800 pb-2">
-                    5. Servicios de terceros
+                    6. Servicios de terceros
                 </h2>
-                <p>
+                <p className="mb-3">
                     La aplicación consume datos públicos de{" "}
                     <strong>MyAnimeList</strong> únicamente para sincronizar las
                     fechas y el estado de emisión de los episodios de anime.
@@ -119,11 +150,25 @@ export default function PrivacyPolicy() {
                     credenciales de MyAnimeList con nosotros ni vincula su
                     cuenta personal a la aplicación.
                 </p>
+                <p>
+                    Para la autenticación utilizamos{" "}
+                    <strong>Google Sign-In</strong>, cuya política de privacidad
+                    puede consultarse en{" "}
+                    <a
+                        href="https://policies.google.com/privacy"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 dark:text-blue-400 underline underline-offset-2"
+                    >
+                        policies.google.com/privacy
+                    </a>
+                    .
+                </p>
             </section>
 
             <section className="mb-8">
                 <h2 className="text-xl font-semibold mb-3 border-b-2 border-slate-100 dark:border-slate-800 pb-2">
-                    6. Seguridad
+                    7. Seguridad
                 </h2>
                 <p>
                     Dado que no recopilamos datos personales ni almacenamos
@@ -136,7 +181,7 @@ export default function PrivacyPolicy() {
 
             <section className="mb-8">
                 <h2 className="text-xl font-semibold mb-3 border-b-2 border-slate-100 dark:border-slate-800 pb-2">
-                    7. Cambios a esta política
+                    8. Cambios a esta política
                 </h2>
                 <p>
                     Podemos actualizar nuestra Política de Privacidad de vez en
@@ -148,7 +193,7 @@ export default function PrivacyPolicy() {
 
             <section className="mb-8">
                 <h2 className="text-xl font-semibold mb-3 border-b-2 border-slate-100 dark:border-slate-800 pb-2">
-                    8. Contacto
+                    9. Contacto
                 </h2>
                 <p>
                     Si tiene alguna pregunta o sugerencia sobre nuestra Política
