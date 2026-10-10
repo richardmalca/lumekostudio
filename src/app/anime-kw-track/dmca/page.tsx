@@ -420,13 +420,18 @@ export default function DmcaPolicy() {
                         <h2>1. Naturaleza del Contenido</h2>
                         <p>
                             Kawaii Animes es una aplicación de seguimiento que muestra información pública sobre series
-                            de anime, incluyendo títulos, fechas de emisión y datos obtenidos de{" "}
-                            <strong>AniList</strong>. La aplicación no aloja ni distribuye contenido de video, audio
-                            ni archivos con obra protegida.
+                            de anime: títulos, fechas y horas de emisión, portadas, sinopsis, géneros, personajes, equipo de
+                            producción y las plataformas donde están disponibles. Esos datos vienen de{" "}
+                            <strong>AniList</strong>.
                         </p>
                         <p>
-                            Las imágenes de portada de anime que pudieran mostrarse provienen de APIs públicas y son
-                            propiedad de sus respectivos titulares (estudios de animación, distribuidores u otras entidades).
+                            La aplicación <strong>no aloja ni distribuye</strong> video, audio ni episodios, y no ofrece
+                            enlaces de descarga. Los enlaces de la sección Dónde verlo llevan a las plataformas oficiales.
+                        </p>
+                        <p>
+                            Las imágenes, los nombres y las marcas que aparecen en la app pertenecen a sus respectivos
+                            titulares (estudios de animación, distribuidores, plataformas u otras entidades) y se muestran
+                            solo con fines informativos.
                         </p>
                     </div>
 
@@ -474,7 +479,7 @@ export default function DmcaPolicy() {
                             soporte@lumekostudio.com
                         </a>
                         <div>
-                            <span className="akwt-legal-subject">Asunto recomendado: DMCA Notice - Kawaii Animes</span>
+                            <span className="akwt-legal-subject">Asunto recomendado: Aviso DMCA | Kawaii Animes</span>
                         </div>
                     </div>
 
