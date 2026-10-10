@@ -3,21 +3,21 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-    title: "Política de Privacidad — Anime KW Track",
+    title: "Política de Privacidad | Kawaii Animes",
     description:
-        "Política de Privacidad de Anime KW Track. Conoce cómo gestionamos tu correo electrónico para notificaciones y sincronización de favoritos.",
+        "Política de Privacidad de Kawaii Animes. Qué datos recopila la app, para qué se usan, cómo funcionan los anuncios y cómo eliminar tu cuenta.",
     robots: "index, follow",
 };
 
 export default function PrivacyPolicy() {
     return (
-        <div style={{ fontFamily: "'Inter', 'Segoe UI', system-ui, sans-serif" }}>
+        <div style={{ fontFamily: "'Roboto Condensed', 'Segoe UI', system-ui, sans-serif" }}>
             <style>{`
-                @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+                @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;500;600;700;800&display=swap');
 
                 .akwt-root {
-                    background-color: #070e27;
-                    color: #f0f8ff;
+                    background-color: #0D0C13;
+                    color: #FBFBFE;
                     min-height: 100vh;
                 }
 
@@ -32,9 +32,9 @@ export default function PrivacyPolicy() {
                     justify-content: space-between;
                     padding: 0 clamp(1.5rem, 5vw, 4rem);
                     height: 68px;
-                    background: rgba(7,14,39,0.88);
+                    background: rgba(13,12,19,0.88);
                     backdrop-filter: blur(20px);
-                    border-bottom: 1px solid #1a2d5a;
+                    border-bottom: 1px solid #262436;
                 }
 
                 .akwt-nav-brand {
@@ -42,7 +42,7 @@ export default function PrivacyPolicy() {
                     align-items: center;
                     gap: 12px;
                     text-decoration: none;
-                    color: #f0f8ff;
+                    color: #FBFBFE;
                 }
 
                 .akwt-nav-brand span {
@@ -61,18 +61,18 @@ export default function PrivacyPolicy() {
                 }
 
                 .akwt-nav-links a {
-                    color: #8ba8cc;
+                    color: #9895AB;
                     text-decoration: none;
                     font-size: 0.9rem;
                     font-weight: 500;
                     transition: color 0.2s;
                 }
 
-                .akwt-nav-links a:hover { color: #7ae8ff; }
+                .akwt-nav-links a:hover { color: #FF5E97; }
 
                 .akwt-btn-primary {
-                    background: linear-gradient(135deg, #1aabcc, #7ae8ff);
-                    color: #070e27;
+                    background: linear-gradient(135deg, #AC87FF, #FF5E97);
+                    color: #0D0C13;
                     border: none;
                     padding: 0.55rem 1.4rem;
                     border-radius: 50px;
@@ -88,7 +88,7 @@ export default function PrivacyPolicy() {
 
                 .akwt-btn-primary:hover {
                     transform: translateY(-2px);
-                    box-shadow: 0 8px 24px rgba(122,232,255,0.35);
+                    box-shadow: 0 8px 24px rgba(255,94,151,0.35);
                 }
 
                 .akwt-legal-hero {
@@ -102,7 +102,7 @@ export default function PrivacyPolicy() {
                     content: '';
                     position: absolute;
                     inset: 0;
-                    background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(26,171,204,0.14) 0%, transparent 70%);
+                    background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(172,135,255,0.14) 0%, transparent 70%);
                     pointer-events: none;
                 }
 
@@ -110,8 +110,8 @@ export default function PrivacyPolicy() {
                     position: absolute;
                     inset: 0;
                     background-image:
-                        linear-gradient(rgba(122,232,255,0.03) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(122,232,255,0.03) 1px, transparent 1px);
+                        linear-gradient(rgba(255,94,151,0.03) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,94,151,0.03) 1px, transparent 1px);
                     background-size: 60px 60px;
                     pointer-events: none;
                     mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
@@ -129,13 +129,13 @@ export default function PrivacyPolicy() {
                     display: inline-flex;
                     align-items: center;
                     gap: 8px;
-                    background: rgba(122,232,255,0.08);
-                    border: 1px solid rgba(122,232,255,0.2);
+                    background: rgba(255,94,151,0.08);
+                    border: 1px solid rgba(255,94,151,0.2);
                     border-radius: 50px;
                     padding: 5px 14px;
                     font-size: 0.75rem;
                     font-weight: 600;
-                    color: #7ae8ff;
+                    color: #FF5E97;
                     margin-bottom: 1.5rem;
                     letter-spacing: 0.05em;
                     text-transform: uppercase;
@@ -147,11 +147,11 @@ export default function PrivacyPolicy() {
                     letter-spacing: -0.04em;
                     line-height: 1.1;
                     margin-bottom: 1rem;
-                    color: #f0f8ff;
+                    color: #FBFBFE;
                 }
 
                 .akwt-gradient-text {
-                    background: linear-gradient(135deg, #fff 0%, #7ae8ff 60%, #1aabcc 100%);
+                    background: linear-gradient(135deg, #fff 0%, #FF5E97 60%, #AC87FF 100%);
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                     background-clip: text;
@@ -159,7 +159,7 @@ export default function PrivacyPolicy() {
 
                 .akwt-legal-date {
                     font-size: 0.85rem;
-                    color: #8ba8cc;
+                    color: #9895AB;
                     font-weight: 500;
                 }
 
@@ -171,7 +171,7 @@ export default function PrivacyPolicy() {
 
                 .akwt-legal-divider {
                     height: 1px;
-                    background: linear-gradient(90deg, transparent, #1a2d5a, transparent);
+                    background: linear-gradient(90deg, transparent, #262436, transparent);
                     margin-bottom: 60px;
                 }
 
@@ -182,7 +182,7 @@ export default function PrivacyPolicy() {
                 .akwt-legal-section h2 {
                     font-size: 1.15rem;
                     font-weight: 700;
-                    color: #f0f8ff;
+                    color: #FBFBFE;
                     letter-spacing: -0.02em;
                     margin-bottom: 1rem;
                     display: flex;
@@ -195,14 +195,14 @@ export default function PrivacyPolicy() {
                     display: block;
                     width: 3px;
                     height: 1.2em;
-                    background: linear-gradient(to bottom, #7ae8ff, #1aabcc);
+                    background: linear-gradient(to bottom, #FF5E97, #AC87FF);
                     border-radius: 2px;
                     flex-shrink: 0;
                 }
 
                 .akwt-legal-section p {
                     font-size: 0.95rem;
-                    color: #8ba8cc;
+                    color: #9895AB;
                     line-height: 1.8;
                     margin-bottom: 0.9rem;
                 }
@@ -218,29 +218,33 @@ export default function PrivacyPolicy() {
                     gap: 0.5rem;
                 }
 
+                .akwt-legal-section ul { list-style: disc; }
+                .akwt-legal-section ol { list-style: decimal; }
+                .akwt-legal-section li::marker { color: #FF5E97; font-weight: 700; }
+
                 .akwt-legal-section li {
                     font-size: 0.95rem;
-                    color: #8ba8cc;
+                    color: #9895AB;
                     line-height: 1.7;
                 }
 
                 .akwt-legal-section strong {
-                    color: #c8dff5;
+                    color: #D8D6E6;
                     font-weight: 600;
                 }
 
                 .akwt-legal-section a {
-                    color: #4dd0e1;
+                    color: #4EE2B0;
                     text-decoration: none;
                     font-weight: 500;
                     transition: color 0.2s;
                 }
 
-                .akwt-legal-section a:hover { color: #7ae8ff; }
+                .akwt-legal-section a:hover { color: #FF5E97; }
 
                 .akwt-legal-highlight {
-                    background: rgba(122,232,255,0.06);
-                    border: 1px solid rgba(122,232,255,0.15);
+                    background: rgba(255,94,151,0.06);
+                    border: 1px solid rgba(255,94,151,0.15);
                     border-radius: 12px;
                     padding: 1.25rem 1.5rem;
                     margin: 1rem 0;
@@ -248,20 +252,20 @@ export default function PrivacyPolicy() {
 
                 .akwt-legal-highlight p {
                     margin: 0;
-                    color: #a8c8e8;
+                    color: #B9B6CC;
                 }
 
                 .akwt-legal-email {
                     display: inline-flex;
                     align-items: center;
                     gap: 8px;
-                    background: rgba(122,232,255,0.08);
-                    border: 1px solid rgba(122,232,255,0.2);
+                    background: rgba(255,94,151,0.08);
+                    border: 1px solid rgba(255,94,151,0.2);
                     border-radius: 8px;
                     padding: 8px 14px;
                     font-family: monospace;
                     font-size: 0.9rem;
-                    color: #7ae8ff;
+                    color: #FF5E97;
                     font-weight: 600;
                     margin-top: 0.5rem;
                     text-decoration: none;
@@ -269,12 +273,12 @@ export default function PrivacyPolicy() {
                 }
 
                 .akwt-legal-email:hover {
-                    background: rgba(122,232,255,0.14);
+                    background: rgba(255,94,151,0.14);
                     transform: translateY(-1px);
                 }
 
                 .akwt-footer {
-                    border-top: 1px solid #1a2d5a;
+                    border-top: 1px solid #262436;
                     padding: 2.5rem clamp(1.5rem, 5vw, 4rem);
                     display: flex;
                     align-items: center;
@@ -289,7 +293,7 @@ export default function PrivacyPolicy() {
                     gap: 10px;
                     font-size: 0.9rem;
                     font-weight: 700;
-                    color: #8ba8cc;
+                    color: #9895AB;
                     text-decoration: none;
                 }
 
@@ -302,20 +306,20 @@ export default function PrivacyPolicy() {
                 }
 
                 .akwt-footer-links a {
-                    color: #8ba8cc;
+                    color: #9895AB;
                     text-decoration: none;
                     font-size: 0.82rem;
                     font-weight: 500;
                     transition: color 0.2s;
                 }
 
-                .akwt-footer-links a:hover { color: #7ae8ff; }
+                .akwt-footer-links a:hover { color: #FF5E97; }
 
-                .akwt-footer-links .active { color: #7ae8ff; }
+                .akwt-footer-links .active { color: #FF5E97; }
 
                 .akwt-footer-copy {
                     font-size: 0.78rem;
-                    color: #8ba8cc;
+                    color: #9895AB;
                     opacity: 0.6;
                 }
 
@@ -328,8 +332,8 @@ export default function PrivacyPolicy() {
             <div className="akwt-root">
                 <nav className="akwt-nav">
                     <Link href="/anime-kw-track" className="akwt-nav-brand">
-                        <Image src="/icon.png" alt="Anime KW Track" width={36} height={36} style={{ borderRadius: 10 }} />
-                        <span>Anime KW Track</span>
+                        <Image src="/icon.png" alt="Kawaii Animes" width={36} height={36} style={{ borderRadius: 10 }} />
+                        <span>Kawaii Animes</span>
                     </Link>
                     <ul className="akwt-nav-links">
                         <li><Link href="/anime-kw-track">Inicio</Link></li>
@@ -343,7 +347,7 @@ export default function PrivacyPolicy() {
                         className="akwt-btn-primary"
                     >
                         <svg viewBox="0 0 24 24" fill="currentColor" style={{ width: 15, height: 15 }}>
-                            <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.4c1.39.07 2.35.74 3.16.8 1.21-.24 2.37-.94 3.68-.84 1.56.12 2.74.72 3.51 1.84-3.21 1.93-2.75 6.28.65 7.54-.7 1.74-1.52 3.36-3 4.54zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
+                            <path d="M5 3.2v17.6c0 .8.9 1.3 1.6.9l14-8.8c.6-.4.6-1.3 0-1.7L6.6 2.3C5.9 1.9 5 2.4 5 3.2z" />
                         </svg>
                         Descargar
                     </a>
@@ -357,7 +361,7 @@ export default function PrivacyPolicy() {
                             Política de{" "}
                             <span className="akwt-gradient-text">Privacidad</span>
                         </h1>
-                        <p className="akwt-legal-date">Última actualización: Junio 2026</p>
+                        <p className="akwt-legal-date">Última actualización: Octubre 2026</p>
                     </div>
                 </div>
 
@@ -366,93 +370,96 @@ export default function PrivacyPolicy() {
 
                     <div className="akwt-legal-section">
                         <p>
-                            En <strong>Lumeko Studio</strong>, valoramos tu privacidad de manera prioritaria.
-                            Esta política describe cómo <strong>Anime KW Track</strong> gestiona los datos en tu dispositivo móvil.
+                            En <strong>Lumeko Studio</strong> nos importa tu privacidad. Esta política explica qué datos trata{" "}
+                            <strong>Kawaii Animes</strong> (antes Anime KW Track), la app para seguir los estrenos de anime,
+                            para qué los usa y qué puedes hacer con ellos.
                         </p>
                     </div>
 
                     <div className="akwt-legal-section">
                         <h2>1. Datos que recopilamos</h2>
-                        <p>
-                            Anime KW Track puede utilizarse de forma completamente anónima. Sin embargo, si eliges iniciar sesión con{" "}
-                            <strong>Google Sign-In</strong>, la aplicación accede únicamente a tu{" "}
-                            <strong>dirección de correo electrónico</strong> con los siguientes fines exclusivos:
-                        </p>
+                        <p>Para usar la app inicias sesión con tu cuenta de Google. Estos son los datos que se tratan:</p>
                         <ul>
-                            <li>Personalizar el envío de notificaciones push sobre nuevos episodios de los anime que sigues.</li>
-                            <li>Guardar y sincronizar tus preferencias (series favoritas, configuración) entre dispositivos o reinstalaciones.</li>
+                            <li>
+                                <strong>Datos de tu cuenta:</strong> tu nombre, tu correo electrónico y un identificador único de
+                                usuario, que nos entrega Google al iniciar sesión.
+                            </li>
+                            <li>
+                                <strong>Tu lista y tus ajustes:</strong> los animes que guardas como favoritos y tus preferencias
+                                de avisos. Se guardan en tu cuenta para que no los pierdas al cambiar de teléfono.
+                            </li>
+                            <li>
+                                <strong>Mensajes de Ayuda y sugerencias:</strong> el texto que nos escribes desde la app, junto con
+                                tu correo, la versión de la app y el tipo de dispositivo.
+                            </li>
+                            <li>
+                                <strong>Datos técnicos y de uso:</strong> identificadores de instalación y del dispositivo, el
+                                identificador para recibir notificaciones, registros de errores, diagnósticos e interacciones con
+                                la app (por ejemplo, qué pantallas se abren o si agregas un anime a tu lista). No registramos el
+                                texto de tus búsquedas.
+                            </li>
+                            <li>
+                                <strong>Datos para anuncios:</strong> la app muestra anuncios de Google AdMob, que puede usar el
+                                identificador de publicidad de tu dispositivo, una ubicación aproximada deducida de tu conexión y
+                                datos de interacción con los anuncios.
+                            </li>
                         </ul>
                         <div className="akwt-legal-highlight">
                             <p>
-                                <strong>No accedemos</strong> al contenido de tu bandeja de entrada, calendarios, contactos
-                                ni a ningún otro dato de tu cuenta de Google. El inicio de sesión es completamente opcional;
-                                todas las funciones principales están disponibles sin crear una cuenta.
+                                <strong>No accedemos</strong> a tu ubicación exacta, ni a tus contactos, cámara, micrófono, fotos,
+                                correos o calendarios de tu cuenta de Google. Tampoco recopilamos datos de pago ni contraseñas.
                             </p>
                         </div>
                     </div>
 
                     <div className="akwt-legal-section">
-                        <h2>2. Datos que NO recopilamos</h2>
-                        <p>En ningún caso recopilamos:</p>
+                        <h2>2. Para qué usamos los datos</h2>
                         <ul>
-                            <li>Nombres completos, números de teléfono ni direcciones físicas.</li>
-                            <li>Contraseñas ni credenciales de ningún servicio.</li>
-                            <li>Acceso a cámara, micrófono o lista de contactos.</li>
-                            <li>Datos de pago o información financiera.</li>
+                            <li>Iniciar tu sesión y guardar tu lista y tus ajustes.</li>
+                            <li>Enviarte avisos cuando sale un capítulo, antes del estreno o en el resumen diario, según lo que elijas.</li>
+                            <li>Responder las ideas y los problemas que nos reportas.</li>
+                            <li>Entender cómo se usa la app, corregir fallas y mejorarla.</li>
+                            <li>Mostrar anuncios y medir su rendimiento, lo que ayuda a mantener la app.</li>
                         </ul>
+                        <p>No vendemos tus datos.</p>
                     </div>
 
                     <div className="akwt-legal-section">
-                        <h2>3. Uso de Internet</h2>
+                        <h2>3. Notificaciones</h2>
                         <p>
-                            La aplicación utiliza tu conexión a Internet para obtener información actualizada sobre los estrenos
-                            de anime y, en caso de haber iniciado sesión con Google, para sincronizar tus preferencias y
-                            gestionar las notificaciones. Ninguna comunicación involucra el envío de datos personales más allá
-                            del identificador de correo electrónico necesario para las funciones descritas.
+                            Para avisarte usamos Firebase Cloud Messaging. Te suscribimos a avisos de los animes de tu lista y
+                            puedes cambiar o apagar los avisos en cualquier momento desde Perfil, en Ajustes, o desde los
+                            ajustes de notificaciones de tu teléfono.
                         </p>
                     </div>
 
                     <div className="akwt-legal-section">
-                        <h2>4. Uso de la ubicación</h2>
+                        <h2>4. Anuncios y tu consentimiento</h2>
                         <p>
-                            Anime KW Track puede solicitar acceso a la ubicación de tu dispositivo únicamente con el fin de
-                            obtener de forma precisa la hora y zona horaria local. Esto permite mostrar las fechas y horarios
-                            de emisión ajustados a tu región.
+                            Kawaii Animes muestra anuncios de Google AdMob. Donde la ley lo exige, como en el Espacio Económico
+                            Europeo y el Reino Unido, la app te pide tu consentimiento antes de mostrar anuncios y puedes cambiar
+                            tu elección en Perfil, Ajustes, Privacidad de anuncios. También puedes restablecer o eliminar el
+                            identificador de publicidad desde los ajustes de tu teléfono.
                         </p>
-                        <p>La ubicación:</p>
+                    </div>
+
+                    <div className="akwt-legal-section">
+                        <h2>5. Servicios de terceros</h2>
                         <ul>
-                            <li>No se almacena en el dispositivo ni en servidores externos.</li>
-                            <li>No se comparte con terceros ni con los desarrolladores.</li>
-                            <li>No se utiliza para el seguimiento o rastreo del usuario.</li>
+                            <li>
+                                <strong>AniList:</strong> de aquí salen los datos públicos de los animes (fechas, portadas,
+                                géneros). No recibe tus datos personales.
+                            </li>
+                            <li>
+                                <strong>Google Sign-In y Firebase</strong> (Autenticación, Base de datos, Notificaciones, Analytics y
+                                Crashlytics): procesan datos en nuestro nombre para que la app funcione.
+                            </li>
+                            <li>
+                                <strong>Google AdMob:</strong> muestra los anuncios y puede recibir los datos descritos arriba.
+                            </li>
                         </ul>
-                    </div>
-
-                    <div className="akwt-legal-section">
-                        <h2>5. Almacenamiento local y en la nube</h2>
                         <p>
-                            Por defecto, los datos generados por ti (listas de seguimiento, favoritos, configuración) se almacenan
-                            de forma local en tu dispositivo. Si has iniciado sesión con Google, tus preferencias se sincronizan
-                            también en nuestros servidores asociados a tu correo electrónico, con el único fin de permitir la
-                            personalización de notificaciones y la recuperación de tus datos ante un cambio de dispositivo.
-                        </p>
-                        <p>
-                            Puedes eliminar tu cuenta y datos asociados contactándonos en:
-                        </p>
-                        <a href="mailto:soporte@lumekostudio.com" className="akwt-legal-email">
-                            soporte@lumekostudio.com
-                        </a>
-                    </div>
-
-                    <div className="akwt-legal-section">
-                        <h2>6. Servicios de terceros</h2>
-                        <p>
-                            La aplicación consume datos públicos de <strong>AniList</strong> para sincronizar las fechas y el
-                            estado de emisión de los episodios de anime. Esta integración no requiere que compartas tus
-                            credenciales de AniList con nosotros.
-                        </p>
-                        <p>
-                            Para la autenticación utilizamos <strong>Google Sign-In</strong>, cuya política de privacidad
-                            puede consultarse en{" "}
+                            Puedes consultar la política de Google en{" "}
                             <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
                                 policies.google.com/privacy
                             </a>
@@ -461,25 +468,45 @@ export default function PrivacyPolicy() {
                     </div>
 
                     <div className="akwt-legal-section">
-                        <h2>7. Seguridad</h2>
+                        <h2>6. Cuánto tiempo guardamos los datos</h2>
                         <p>
-                            Dado que no recopilamos datos personales ni almacenamos información sensible en servidores externos,
-                            el riesgo de exposición de datos es mínimo. La seguridad de la información almacenada localmente
-                            depende por completo de las medidas de seguridad de tu propio dispositivo móvil.
+                            Guardamos los datos de tu cuenta, tu lista y tus ajustes mientras tengas la cuenta. Los mensajes de
+                            Ayuda y sugerencias se conservan para atender tu consulta. Los datos de analítica y errores se
+                            conservan durante el periodo de retención de Firebase.
                         </p>
                     </div>
 
                     <div className="akwt-legal-section">
-                        <h2>8. Cambios a esta política</h2>
+                        <h2>7. Eliminar tu cuenta y tus datos</h2>
                         <p>
-                            Podemos actualizar nuestra Política de Privacidad de vez en cuando. Se recomienda revisar esta
-                            página periódicamente. Las actualizaciones entrarán en vigor tan pronto como se publiquen.
+                            Puedes eliminar tu cuenta cuando quieras desde la app, en Perfil, con la opción Eliminar cuenta. Esto
+                            borra tu perfil, tu lista, tus suscripciones a avisos y tu cuenta. Si no puedes entrar a la app, o
+                            quieres que borremos también los mensajes que nos enviaste, sigue los pasos de esta página:
+                        </p>
+                        <p>
+                            <Link href="/anime-kw-track/delete-account">Cómo eliminar tu cuenta y tus datos</Link>
                         </p>
                     </div>
 
                     <div className="akwt-legal-section">
-                        <h2>9. Contacto</h2>
-                        <p>Si tienes alguna pregunta sobre esta Política de Privacidad, contáctanos en:</p>
+                        <h2>8. Seguridad</h2>
+                        <p>
+                            Los datos viajan cifrados entre la app y nuestros servicios. Aun así, ningún sistema es perfecto; por
+                            eso te recomendamos mantener tu teléfono y tu cuenta de Google protegidos.
+                        </p>
+                    </div>
+
+                    <div className="akwt-legal-section">
+                        <h2>9. Cambios a esta política</h2>
+                        <p>
+                            Podemos actualizar esta política de vez en cuando. La fecha de arriba indica la última revisión y los
+                            cambios entran en vigor cuando se publican en esta página.
+                        </p>
+                    </div>
+
+                    <div className="akwt-legal-section">
+                        <h2>10. Contacto</h2>
+                        <p>Si tienes preguntas sobre esta política o sobre tus datos, escríbenos a:</p>
                         <a href="mailto:soporte@lumekostudio.com" className="akwt-legal-email">
                             soporte@lumekostudio.com
                         </a>
@@ -488,8 +515,8 @@ export default function PrivacyPolicy() {
 
                 <footer className="akwt-footer">
                     <Link href="/" className="akwt-footer-brand">
-                        <Image src="/icon.png" alt="Anime KW Track" width={28} height={28} style={{ borderRadius: 8 }} />
-                        Anime KW Track · Lumeko Studio
+                        <Image src="/icon.png" alt="Kawaii Animes" width={28} height={28} style={{ borderRadius: 8 }} />
+                        Kawaii Animes · Lumeko Studio
                     </Link>
                     <ul className="akwt-footer-links">
                         <li><Link href="/anime-kw-track/privacy" className="active">Privacidad</Link></li>
