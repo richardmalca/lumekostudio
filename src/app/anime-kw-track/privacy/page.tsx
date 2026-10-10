@@ -371,7 +371,7 @@ export default function PrivacyPolicy() {
                     <div className="akwt-legal-section">
                         <p>
                             En <strong>Lumeko Studio</strong> nos importa tu privacidad. Esta política explica qué datos trata{" "}
-                            <strong>Kawaii Animes</strong> (antes Anime KW Track), la app para seguir los estrenos de anime,
+                            <strong>Kawaii Animes</strong> (antes Kawaii Animes), la app para seguir los estrenos de anime,
                             para qué los usa y qué puedes hacer con ellos.
                         </p>
                     </div>
@@ -522,6 +522,7 @@ export default function PrivacyPolicy() {
                         <li><Link href="/anime-kw-track/privacy" className="active">Privacidad</Link></li>
                         <li><Link href="/anime-kw-track/terms">Términos</Link></li>
                         <li><Link href="/anime-kw-track/dmca">DMCA</Link></li>
+                        <li><Link href="/anime-kw-track/delete-account">Eliminar cuenta</Link></li>
                         <li><a href="mailto:soporte@lumekostudio.com">Contacto</a></li>
                     </ul>
                     <span className="akwt-footer-copy">© {new Date().getFullYear()} Lumeko Studio</span>

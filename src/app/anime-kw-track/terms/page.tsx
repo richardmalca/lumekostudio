@@ -3,21 +3,21 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-    title: "Términos y Condiciones — Anime KW Track",
+    title: "Términos y Condiciones | Kawaii Animes",
     description:
-        "Términos y Condiciones de uso de la aplicación móvil Anime KW Track de Lumeko Studio.",
+        "Términos y Condiciones de uso de Kawaii Animes, la app de Lumeko Studio para seguir los estrenos de anime.",
     robots: "index, follow",
 };
 
 export default function TermsAndConditions() {
     return (
-        <div style={{ fontFamily: "'Inter', 'Segoe UI', system-ui, sans-serif" }}>
+        <div style={{ fontFamily: "'Roboto Condensed', 'Segoe UI', system-ui, sans-serif" }}>
             <style>{`
-                @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+                @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;500;600;700;800&display=swap');
 
                 .akwt-root {
-                    background-color: #070e27;
-                    color: #f0f8ff;
+                    background-color: #0D0C13;
+                    color: #FBFBFE;
                     min-height: 100vh;
                 }
 
@@ -32,9 +32,9 @@ export default function TermsAndConditions() {
                     justify-content: space-between;
                     padding: 0 clamp(1.5rem, 5vw, 4rem);
                     height: 68px;
-                    background: rgba(7,14,39,0.88);
+                    background: rgba(13,12,19,0.88);
                     backdrop-filter: blur(20px);
-                    border-bottom: 1px solid #1a2d5a;
+                    border-bottom: 1px solid #262436;
                 }
 
                 .akwt-nav-brand {
@@ -42,7 +42,7 @@ export default function TermsAndConditions() {
                     align-items: center;
                     gap: 12px;
                     text-decoration: none;
-                    color: #f0f8ff;
+                    color: #FBFBFE;
                 }
 
                 .akwt-nav-brand span {
@@ -61,18 +61,18 @@ export default function TermsAndConditions() {
                 }
 
                 .akwt-nav-links a {
-                    color: #8ba8cc;
+                    color: #9895AB;
                     text-decoration: none;
                     font-size: 0.9rem;
                     font-weight: 500;
                     transition: color 0.2s;
                 }
 
-                .akwt-nav-links a:hover { color: #7ae8ff; }
+                .akwt-nav-links a:hover { color: #FF5E97; }
 
                 .akwt-btn-primary {
-                    background: linear-gradient(135deg, #1aabcc, #7ae8ff);
-                    color: #070e27;
+                    background: linear-gradient(135deg, #AC87FF, #FF5E97);
+                    color: #0D0C13;
                     border: none;
                     padding: 0.55rem 1.4rem;
                     border-radius: 50px;
@@ -88,7 +88,7 @@ export default function TermsAndConditions() {
 
                 .akwt-btn-primary:hover {
                     transform: translateY(-2px);
-                    box-shadow: 0 8px 24px rgba(122,232,255,0.35);
+                    box-shadow: 0 8px 24px rgba(255,94,151,0.35);
                 }
 
                 .akwt-legal-hero {
@@ -102,7 +102,7 @@ export default function TermsAndConditions() {
                     content: '';
                     position: absolute;
                     inset: 0;
-                    background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(26,171,204,0.14) 0%, transparent 70%);
+                    background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(172,135,255,0.14) 0%, transparent 70%);
                     pointer-events: none;
                 }
 
@@ -110,8 +110,8 @@ export default function TermsAndConditions() {
                     position: absolute;
                     inset: 0;
                     background-image:
-                        linear-gradient(rgba(122,232,255,0.03) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(122,232,255,0.03) 1px, transparent 1px);
+                        linear-gradient(rgba(255,94,151,0.03) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,94,151,0.03) 1px, transparent 1px);
                     background-size: 60px 60px;
                     pointer-events: none;
                     mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
@@ -129,13 +129,13 @@ export default function TermsAndConditions() {
                     display: inline-flex;
                     align-items: center;
                     gap: 8px;
-                    background: rgba(122,232,255,0.08);
-                    border: 1px solid rgba(122,232,255,0.2);
+                    background: rgba(255,94,151,0.08);
+                    border: 1px solid rgba(255,94,151,0.2);
                     border-radius: 50px;
                     padding: 5px 14px;
                     font-size: 0.75rem;
                     font-weight: 600;
-                    color: #7ae8ff;
+                    color: #FF5E97;
                     margin-bottom: 1.5rem;
                     letter-spacing: 0.05em;
                     text-transform: uppercase;
@@ -147,11 +147,11 @@ export default function TermsAndConditions() {
                     letter-spacing: -0.04em;
                     line-height: 1.1;
                     margin-bottom: 1rem;
-                    color: #f0f8ff;
+                    color: #FBFBFE;
                 }
 
                 .akwt-gradient-text {
-                    background: linear-gradient(135deg, #fff 0%, #7ae8ff 60%, #1aabcc 100%);
+                    background: linear-gradient(135deg, #fff 0%, #FF5E97 60%, #AC87FF 100%);
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                     background-clip: text;
@@ -159,7 +159,7 @@ export default function TermsAndConditions() {
 
                 .akwt-legal-date {
                     font-size: 0.85rem;
-                    color: #8ba8cc;
+                    color: #9895AB;
                     font-weight: 500;
                 }
 
@@ -171,7 +171,7 @@ export default function TermsAndConditions() {
 
                 .akwt-legal-divider {
                     height: 1px;
-                    background: linear-gradient(90deg, transparent, #1a2d5a, transparent);
+                    background: linear-gradient(90deg, transparent, #262436, transparent);
                     margin-bottom: 60px;
                 }
 
@@ -182,7 +182,7 @@ export default function TermsAndConditions() {
                 .akwt-legal-section h2 {
                     font-size: 1.15rem;
                     font-weight: 700;
-                    color: #f0f8ff;
+                    color: #FBFBFE;
                     letter-spacing: -0.02em;
                     margin-bottom: 1rem;
                     display: flex;
@@ -195,14 +195,14 @@ export default function TermsAndConditions() {
                     display: block;
                     width: 3px;
                     height: 1.2em;
-                    background: linear-gradient(to bottom, #7ae8ff, #1aabcc);
+                    background: linear-gradient(to bottom, #FF5E97, #AC87FF);
                     border-radius: 2px;
                     flex-shrink: 0;
                 }
 
                 .akwt-legal-section p {
                     font-size: 0.95rem;
-                    color: #8ba8cc;
+                    color: #9895AB;
                     line-height: 1.8;
                     margin-bottom: 0.9rem;
                 }
@@ -218,33 +218,37 @@ export default function TermsAndConditions() {
                     gap: 0.5rem;
                 }
 
+                .akwt-legal-section ul { list-style: disc; }
+                .akwt-legal-section ol { list-style: decimal; }
+                .akwt-legal-section li::marker { color: #FF5E97; font-weight: 700; }
+
                 .akwt-legal-section li {
                     font-size: 0.95rem;
-                    color: #8ba8cc;
+                    color: #9895AB;
                     line-height: 1.7;
                 }
 
                 .akwt-legal-section li strong {
-                    color: #c8dff5;
+                    color: #D8D6E6;
                 }
 
                 .akwt-legal-section strong {
-                    color: #c8dff5;
+                    color: #D8D6E6;
                     font-weight: 600;
                 }
 
                 .akwt-legal-section a {
-                    color: #4dd0e1;
+                    color: #4EE2B0;
                     text-decoration: none;
                     font-weight: 500;
                     transition: color 0.2s;
                 }
 
-                .akwt-legal-section a:hover { color: #7ae8ff; }
+                .akwt-legal-section a:hover { color: #FF5E97; }
 
                 .akwt-legal-highlight {
-                    background: rgba(122,232,255,0.06);
-                    border: 1px solid rgba(122,232,255,0.15);
+                    background: rgba(255,94,151,0.06);
+                    border: 1px solid rgba(255,94,151,0.15);
                     border-radius: 12px;
                     padding: 1.25rem 1.5rem;
                     margin: 1rem 0;
@@ -252,20 +256,20 @@ export default function TermsAndConditions() {
 
                 .akwt-legal-highlight p {
                     margin: 0;
-                    color: #a8c8e8;
+                    color: #B9B6CC;
                 }
 
                 .akwt-legal-email {
                     display: inline-flex;
                     align-items: center;
                     gap: 8px;
-                    background: rgba(122,232,255,0.08);
-                    border: 1px solid rgba(122,232,255,0.2);
+                    background: rgba(255,94,151,0.08);
+                    border: 1px solid rgba(255,94,151,0.2);
                     border-radius: 8px;
                     padding: 8px 14px;
                     font-family: monospace;
                     font-size: 0.9rem;
-                    color: #7ae8ff;
+                    color: #FF5E97;
                     font-weight: 600;
                     margin-top: 0.5rem;
                     text-decoration: none;
@@ -273,12 +277,12 @@ export default function TermsAndConditions() {
                 }
 
                 .akwt-legal-email:hover {
-                    background: rgba(122,232,255,0.14);
+                    background: rgba(255,94,151,0.14);
                     transform: translateY(-1px);
                 }
 
                 .akwt-footer {
-                    border-top: 1px solid #1a2d5a;
+                    border-top: 1px solid #262436;
                     padding: 2.5rem clamp(1.5rem, 5vw, 4rem);
                     display: flex;
                     align-items: center;
@@ -293,7 +297,7 @@ export default function TermsAndConditions() {
                     gap: 10px;
                     font-size: 0.9rem;
                     font-weight: 700;
-                    color: #8ba8cc;
+                    color: #9895AB;
                     text-decoration: none;
                 }
 
@@ -306,19 +310,19 @@ export default function TermsAndConditions() {
                 }
 
                 .akwt-footer-links a {
-                    color: #8ba8cc;
+                    color: #9895AB;
                     text-decoration: none;
                     font-size: 0.82rem;
                     font-weight: 500;
                     transition: color 0.2s;
                 }
 
-                .akwt-footer-links a:hover { color: #7ae8ff; }
-                .akwt-footer-links .active { color: #7ae8ff; }
+                .akwt-footer-links a:hover { color: #FF5E97; }
+                .akwt-footer-links .active { color: #FF5E97; }
 
                 .akwt-footer-copy {
                     font-size: 0.78rem;
-                    color: #8ba8cc;
+                    color: #9895AB;
                     opacity: 0.6;
                 }
 
@@ -331,8 +335,8 @@ export default function TermsAndConditions() {
             <div className="akwt-root">
                 <nav className="akwt-nav">
                     <Link href="/anime-kw-track" className="akwt-nav-brand">
-                        <Image src="/icon.png" alt="Anime KW Track" width={36} height={36} style={{ borderRadius: 10 }} />
-                        <span>Anime KW Track</span>
+                        <Image src="/icon.png" alt="Kawaii Animes" width={36} height={36} style={{ borderRadius: 10 }} />
+                        <span>Kawaii Animes</span>
                     </Link>
                     <ul className="akwt-nav-links">
                         <li><Link href="/anime-kw-track">Inicio</Link></li>
@@ -346,7 +350,7 @@ export default function TermsAndConditions() {
                         className="akwt-btn-primary"
                     >
                         <svg viewBox="0 0 24 24" fill="currentColor" style={{ width: 15, height: 15 }}>
-                            <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.4c1.39.07 2.35.74 3.16.8 1.21-.24 2.37-.94 3.68-.84 1.56.12 2.74.72 3.51 1.84-3.21 1.93-2.75 6.28.65 7.54-.7 1.74-1.52 3.36-3 4.54zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
+                            <path d="M5 3.2v17.6c0 .8.9 1.3 1.6.9l14-8.8c.6-.4.6-1.3 0-1.7L6.6 2.3C5.9 1.9 5 2.4 5 3.2z" />
                         </svg>
                         Descargar
                     </a>
@@ -360,7 +364,7 @@ export default function TermsAndConditions() {
                             Términos y{" "}
                             <span className="akwt-gradient-text">Condiciones</span>
                         </h1>
-                        <p className="akwt-legal-date">Última actualización: Junio 2026</p>
+                        <p className="akwt-legal-date">Última actualización: Octubre 2026</p>
                     </div>
                 </div>
 
@@ -369,99 +373,90 @@ export default function TermsAndConditions() {
 
                     <div className="akwt-legal-section">
                         <p>
-                            Al descargar, instalar o utilizar <strong>Anime KW Track</strong>, aceptas los presentes
-                            Términos y Condiciones. Si no estás de acuerdo con alguno de ellos, te pedimos que no utilices
-                            la aplicación. Esta aplicación es desarrollada y mantenida por <strong>Lumeko Studio</strong>.
+                            Al descargar, instalar o usar <strong>Kawaii Animes</strong>, aceptas estos Términos y Condiciones. Si no
+                            estás de acuerdo, te pedimos que no uses la aplicación. La app es desarrollada y mantenida por{" "}
+                            <strong>Lumeko Studio</strong>.
                         </p>
                     </div>
 
                     <div className="akwt-legal-section">
-                        <h2>1. Descripción del Servicio</h2>
+                        <h2>1. Qué es Kawaii Animes</h2>
                         <p>
-                            Anime KW Track es una aplicación móvil que permite al usuario hacer seguimiento de series de
-                            anime, recibir notificaciones de nuevos episodios y guardar sus preferencias personales.
-                            La aplicación ofrece opcionalmente inicio de sesión con Google para mejorar la experiencia
-                            de notificaciones y personalización.
+                            Kawaii Animes es una app para Android que te muestra cuándo sale cada capítulo de los animes, te permite
+                            guardar tu lista, buscar con filtros y recibir avisos de estrenos. La app no ofrece episodios para ver:
+                            solo te indica en qué plataformas están disponibles.
                         </p>
                     </div>
 
                     <div className="akwt-legal-section">
-                        <h2>2. Inicio de Sesión con Google</h2>
+                        <h2>2. Tu cuenta</h2>
                         <p>
-                            La aplicación ofrece la posibilidad de autenticarse mediante <strong>Google Sign-In</strong>.
-                            Este proceso es opcional y se realiza exclusivamente para:
-                        </p>
-                        <ul>
-                            <li>Personalizar el envío de notificaciones push de nuevos episodios de anime.</li>
-                            <li>Guardar y sincronizar las preferencias del usuario (series favoritas y configuraciones).</li>
-                            <li>Identificar de forma segura al usuario para mantener sus preferencias entre dispositivos o reinstalaciones.</li>
-                        </ul>
-                        <div className="akwt-legal-highlight">
-                            <p>
-                                Al iniciar sesión con Google, la aplicación accede únicamente a tu{" "}
-                                <strong>dirección de correo electrónico</strong> como identificador. No accedemos ni leemos
-                                el contenido de tu correo, calendarios, contactos ni ningún otro dato asociado a tu cuenta.
-                            </p>
-                        </div>
-                        <p>
-                            Puedes revocar el acceso en cualquier momento desde la configuración de tu cuenta en{" "}
+                            Para usar la app inicias sesión con tu cuenta de Google. La app recibe tu nombre, tu correo y un
+                            identificador de usuario, y los usa para guardar tu lista y tus ajustes y para enviarte los avisos que
+                            elijas. No leemos tu correo, calendarios ni contactos. Puedes revocar el acceso en cualquier momento
+                            desde{" "}
                             <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer">
                                 myaccount.google.com/permissions
                             </a>
                             .
                         </p>
+                        <p>
+                            Puedes eliminar tu cuenta cuando quieras desde la app o siguiendo los pasos de{" "}
+                            <Link href="/anime-kw-track/delete-account">esta página</Link>.
+                        </p>
                     </div>
 
                     <div className="akwt-legal-section">
-                        <h2>3. Uso Aceptable</h2>
-                        <p>Al usar Anime KW Track, te comprometes a:</p>
+                        <h2>3. Anuncios</h2>
+                        <p>
+                            La app es gratuita y muestra anuncios de Google AdMob, que ayudan a mantenerla. Donde la ley lo exige, te
+                            pedimos tu consentimiento antes de mostrarlos. Más detalles en la{" "}
+                            <Link href="/anime-kw-track/privacy">Política de Privacidad</Link>.
+                        </p>
+                    </div>
+
+                    <div className="akwt-legal-section">
+                        <h2>4. Uso aceptable</h2>
+                        <p>Al usar Kawaii Animes te comprometes a:</p>
                         <ul>
-                            <li>No utilizar la aplicación para fines ilegales o no autorizados.</li>
-                            <li>No intentar acceder, modificar o interferir con los sistemas o datos de otros usuarios.</li>
-                            <li>No reproducir, distribuir ni modificar el contenido de la aplicación sin autorización expresa de Lumeko Studio.</li>
+                            <li>No usar la app para fines ilegales o no autorizados.</li>
+                            <li>No intentar acceder, modificar o interferir con los sistemas o los datos de otras personas.</li>
+                            <li>No enviar mensajes abusivos o con contenido ilegal desde Ayuda y sugerencias.</li>
+                            <li>No copiar, distribuir ni modificar el contenido de la app sin autorización de Lumeko Studio.</li>
                         </ul>
                     </div>
 
                     <div className="akwt-legal-section">
-                        <h2>4. Propiedad Intelectual</h2>
+                        <h2>5. Propiedad intelectual</h2>
                         <p>
-                            Todo el contenido, diseño, código y materiales de <strong>Anime KW Track</strong> son propiedad
-                            exclusiva de <strong>Lumeko Studio</strong>, a menos que se indique lo contrario. La información
-                            sobre anime (títulos, imágenes, sinopsis) proviene de fuentes públicas como{" "}
-                            <strong>AniList</strong> y pertenece a sus respectivos titulares.
+                            El diseño, el código y los materiales de Kawaii Animes son de <strong>Lumeko Studio</strong>, salvo que
+                            se indique lo contrario. La información sobre los animes (títulos, portadas, sinopsis) viene de{" "}
+                            <a href="https://anilist.co" target="_blank" rel="noopener noreferrer">AniList</a> y pertenece a sus
+                            respectivos titulares. Kawaii Animes no está afiliada a AniList ni a las plataformas de streaming que
+                            menciona.
                         </p>
                     </div>
 
                     <div className="akwt-legal-section">
-                        <h2>5. Limitación de Responsabilidad</h2>
+                        <h2>6. Limitación de responsabilidad</h2>
                         <p>
-                            Lumeko Studio no se responsabiliza por inexactitudes en las fechas de emisión de episodios,
-                            interrupciones del servicio ni por cualquier pérdida de datos derivada del uso de la aplicación.
-                            El servicio se proporciona <em>«tal como está»</em> sin garantías de ningún tipo.
+                            Lumeko Studio no se responsabiliza por inexactitudes en las fechas y horas de emisión, por
+                            interrupciones del servicio ni por la pérdida de datos derivada del uso de la app. El servicio se
+                            ofrece tal como está, sin garantías de ningún tipo.
                         </p>
                     </div>
 
                     <div className="akwt-legal-section">
-                        <h2>6. Modificaciones</h2>
+                        <h2>7. Cambios</h2>
                         <p>
-                            Lumeko Studio se reserva el derecho de actualizar estos Términos y Condiciones en cualquier
-                            momento. Se notificará dentro de la aplicación ante cambios significativos. El uso continuado
-                            de la aplicación después de dichos cambios constituye la aceptación de los nuevos términos.
-                        </p>
-                    </div>
-
-                    <div className="akwt-legal-section">
-                        <h2>7. Política de Privacidad</h2>
-                        <p>
-                            El uso de la aplicación también está sujeto a nuestra{" "}
-                            <Link href="/anime-kw-track/privacy">Política de Privacidad</Link>
-                            , la cual forma parte integral de estos Términos.
+                            Podemos actualizar estos términos en cualquier momento. Si el cambio es importante, lo avisaremos en la
+                            app. Seguir usándola después del cambio significa que aceptas los nuevos términos.
                         </p>
                     </div>
 
                     <div className="akwt-legal-section">
                         <h2>8. Contacto</h2>
-                        <p>Para cualquier consulta sobre estos Términos y Condiciones, contáctanos en:</p>
+                        <p>Para cualquier consulta sobre estos términos, escríbenos a:</p>
                         <a href="mailto:soporte@lumekostudio.com" className="akwt-legal-email">
                             soporte@lumekostudio.com
                         </a>
@@ -470,13 +465,14 @@ export default function TermsAndConditions() {
 
                 <footer className="akwt-footer">
                     <Link href="/" className="akwt-footer-brand">
-                        <Image src="/icon.png" alt="Anime KW Track" width={28} height={28} style={{ borderRadius: 8 }} />
-                        Anime KW Track · Lumeko Studio
+                        <Image src="/icon.png" alt="Kawaii Animes" width={28} height={28} style={{ borderRadius: 8 }} />
+                        Kawaii Animes · Lumeko Studio
                     </Link>
                     <ul className="akwt-footer-links">
                         <li><Link href="/anime-kw-track/privacy">Privacidad</Link></li>
                         <li><Link href="/anime-kw-track/terms" className="active">Términos</Link></li>
                         <li><Link href="/anime-kw-track/dmca">DMCA</Link></li>
+                        <li><Link href="/anime-kw-track/delete-account">Eliminar cuenta</Link></li>
                         <li><a href="mailto:soporte@lumekostudio.com">Contacto</a></li>
                     </ul>
                     <span className="akwt-footer-copy">© {new Date().getFullYear()} Lumeko Studio</span>

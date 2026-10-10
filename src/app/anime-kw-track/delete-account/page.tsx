@@ -444,6 +444,7 @@ export default function DeleteAccount() {
                         <li><Link href="/anime-kw-track/privacy">Privacidad</Link></li>
                         <li><Link href="/anime-kw-track/terms">Términos</Link></li>
                         <li><Link href="/anime-kw-track/dmca">DMCA</Link></li>
+                        <li><Link href="/anime-kw-track/delete-account">Eliminar cuenta</Link></li>
                         <li><a href="mailto:soporte@lumekostudio.com">Contacto</a></li>
                     </ul>
                     <span className="akwt-footer-copy">© {new Date().getFullYear()} Lumeko Studio</span>

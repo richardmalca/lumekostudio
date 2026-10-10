@@ -2,747 +2,321 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+const PLAY_URL = "https://play.google.com/store/apps/details?id=com.lumekostudio.animekwtrack";
+
 export const metadata: Metadata = {
-    title: "Anime KW Track — Sigue tu anime favorito",
+    title: "Kawaii Animes | Calendario de estrenos de anime",
     description:
-        "Aplicación móvil para seguir tus series de anime, recibir notificaciones de nuevos episodios y organizar tus favoritos. Datos impulsados por AniList.",
+        "Kawaii Animes te dice cuándo sale cada capítulo, a la hora de tu zona, y te avisa para que no se te pase ninguno. Calendario, tu lista, búsqueda con filtros y widget. Para Android.",
     robots: "index, follow",
     openGraph: {
-        title: "Anime KW Track",
-        description: "Tu tracker de anime definitivo. Datos en tiempo real de AniList.",
-        images: ["/icon.png"],
+        title: "Kawaii Animes",
+        description: "Tus estrenos de anime, a tu hora. Calendario, avisos y tu lista en una sola app.",
+        images: ["/kawaii-animes/og.png"],
     },
 };
 
-const features = [
+const rows = [
     {
-        icon: (
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-            </svg>
-        ),
-        title: "Notificaciones en tiempo real",
-        desc: "Recibe alertas instantáneas cuando estrena un nuevo episodio de los animes que sigues.",
+        tag: "Calendario",
+        title: "Cada capítulo a su hora",
+        accent: "su hora",
+        text: "Mira los próximos 7 días con la hora exacta de cada capítulo, ya convertida a tu zona horaria. Filtra por tu lista para ver solo lo que sigues.",
+        points: ["Selector de 7 días con el día de hoy marcado", "Línea de tiempo por hora", "Plataforma donde se emite cada capítulo"],
+        img: "calendario",
+        color: "#4EE2B0",
     },
     {
-        icon: (
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-            </svg>
-        ),
-        title: "Lista de favoritos",
-        desc: "Guarda y organiza tus series favoritas. Sincronización automática entre dispositivos con Google.",
+        tag: "Mi lista",
+        title: "Tu lista, con aviso de cada novedad",
+        accent: "novedad",
+        text: "Guarda tus animes y la app te muestra primero cuál es el próximo en salir, con su cuenta atrás. Los avisos llegan al emitirse o hasta 60 minutos antes.",
+        points: ["Próximo capítulo con cuenta atrás", "Avisos al emitirse, 15, 30 o 60 minutos antes", "Resumen diario con lo que sale hoy"],
+        img: "mi-lista",
+        color: "#AC87FF",
     },
     {
-        icon: (
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-        ),
-        title: "Calendario de emisiones",
-        desc: "Consulta el horario semanal de todos los animes en emisión, ajustado a tu zona horaria.",
+        tag: "Buscar",
+        title: "Encuentra tu próximo anime",
+        accent: "anime",
+        text: "Busca por nombre o género y filtra por temporada, año, formato y estado. Si no sabes qué ver, el botón Sorpréndeme elige uno entre los más populares.",
+        points: ["Filtros de temporada, año, formato y estado", "Vista en lista o en cuadrícula", "Historial de búsquedas recientes"],
+        img: "buscar",
+        color: "#FFDF6D",
     },
     {
-        icon: (
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
-            </svg>
-        ),
-        title: "Búsqueda avanzada",
-        desc: "Encuentra cualquier anime por nombre, género, temporada o estudio de producción.",
-    },
-    {
-        icon: (
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-            </svg>
-        ),
-        title: "Estadísticas de seguimiento",
-        desc: "Visualiza cuántos episodios has visto, qué géneros dominas y tu actividad semanal.",
-    },
-    {
-        icon: (
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-            </svg>
-        ),
-        title: "Sincronización en la nube",
-        desc: "Tus datos siempre disponibles. Inicia sesión con Google y accede desde cualquier dispositivo.",
+        tag: "Historia",
+        title: "Conoce toda la historia",
+        accent: "historia",
+        text: "Cada anime muestra su ficha completa: puntaje, géneros, personajes, equipo y dónde verlo. Y un orden de la historia para saber qué viene antes y qué después.",
+        points: ["Precuelas y secuelas en una línea de tiempo", "Personajes y equipo de producción", "Enlaces a las plataformas donde verlo"],
+        img: "historia",
+        color: "#FF5E97",
     },
 ];
 
-export default function AnimeKwTrackPage() {
+const extras = [
+    { title: "Widget en tu pantalla", desc: "Los próximos capítulos de tu lista, siempre a la vista, en tres tamaños." },
+    { title: "Avisos a tu medida", desc: "Elige si quieres avisos de series, de películas o de ambos, y con cuánta anticipación." },
+    { title: "Tu zona horaria", desc: "Todas las horas se muestran en la zona que elijas, sin cuentas mentales." },
+    { title: "Agrega al calendario", desc: "Guarda un capítulo en el calendario de tu teléfono con un toque." },
+    { title: "Comparte un anime", desc: "Crea una tarjeta con la portada y compártela con tus amigos." },
+    { title: "Teléfonos y tabletas", desc: "El diseño se adapta a pantallas grandes, con menú lateral y dos paneles." },
+];
+
+export default function KawaiiAnimesHome() {
     return (
-        <div style={{ fontFamily: "'Inter', 'Segoe UI', system-ui, sans-serif" }}>
+        <div style={{ fontFamily: "'Roboto Condensed', 'Segoe UI', system-ui, sans-serif" }}>
             <style>{`
-                @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+                @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;500;600;700;800&display=swap');
 
-                .akwt-root {
-                    background-color: #070e27;
-                    color: #f0f8ff;
-                    min-height: 100vh;
-                    overflow-x: hidden;
+                .kw-root { background: #0D0C13; color: #FBFBFE; min-height: 100vh; overflow-x: hidden; }
+                .kw-root * { box-sizing: border-box; }
+                .kw-root a { text-decoration: none; }
+
+                .kw-nav {
+                    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+                    display: flex; align-items: center; justify-content: space-between;
+                    padding: 0 clamp(1.25rem, 5vw, 4rem); height: 68px;
+                    background: rgba(13,12,19,0.85); backdrop-filter: blur(18px);
+                    border-bottom: 1px solid #262436;
                 }
+                .kw-brand { display: flex; align-items: center; gap: 12px; color: #FBFBFE; font-weight: 800; font-size: 1.15rem; letter-spacing: -0.01em; }
+                .kw-nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; margin: 0; padding: 0; }
+                .kw-nav-links a { color: #9895AB; font-size: 0.95rem; font-weight: 500; transition: color .2s; }
+                .kw-nav-links a:hover { color: #FF5E97; }
 
-                * { box-sizing: border-box; }
-
-                .akwt-nav {
-                    position: fixed;
-                    top: 0; left: 0; right: 0;
-                    z-index: 100;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    padding: 0 clamp(1.5rem, 5vw, 4rem);
-                    height: 68px;
-                    background: rgba(7,14,39,0.88);
-                    backdrop-filter: blur(20px);
-                    border-bottom: 1px solid #1a2d5a;
+                .kw-btn {
+                    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+                    border-radius: 999px; font-weight: 700; font-size: 0.95rem; padding: 0.6rem 1.4rem;
+                    transition: transform .2s, box-shadow .2s; cursor: pointer; border: 0;
                 }
+                .kw-btn-primary { background: linear-gradient(135deg, #AC87FF, #FF5E97); color: #0D0C13; }
+                .kw-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(255,94,151,0.35); }
+                .kw-btn-ghost { background: transparent; color: #FBFBFE; border: 1px solid #262436; }
+                .kw-btn-ghost:hover { border-color: #FF5E97; color: #FF5E97; }
+                .kw-btn-lg { padding: 0.9rem 2rem; font-size: 1.05rem; }
 
-                .akwt-nav-brand {
-                    display: flex;
-                    align-items: center;
-                    gap: 12px;
-                    text-decoration: none;
-                    color: #f0f8ff;
+                .kw-hero {
+                    position: relative; padding: 130px clamp(1.25rem, 5vw, 4rem) 90px;
+                    display: grid; grid-template-columns: 1.05fr 1fr; gap: 3rem; align-items: center;
+                    max-width: 1200px; margin: 0 auto;
                 }
-
-                .akwt-nav-brand span {
-                    font-size: 1.1rem;
-                    font-weight: 700;
-                    letter-spacing: -0.02em;
+                .kw-glow { position: absolute; border-radius: 50%; filter: blur(110px); pointer-events: none; z-index: 0; }
+                .kw-hero > *:not(.kw-glow) { position: relative; z-index: 1; }
+                .kw-badge {
+                    display: inline-flex; align-items: center; gap: 8px; font-size: 0.78rem; font-weight: 700;
+                    letter-spacing: 0.12em; text-transform: uppercase; color: #FF5E97;
+                    background: rgba(255,94,151,0.1); border: 1px solid rgba(255,94,151,0.3);
+                    padding: 6px 14px; border-radius: 999px; margin-bottom: 1.5rem;
                 }
+                .kw-hero h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); font-weight: 800; line-height: 1.02; letter-spacing: -0.03em; margin: 0 0 1.25rem; }
+                .kw-grad { background: linear-gradient(135deg, #FF5E97, #AC87FF); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+                .kw-hero p { font-size: 1.2rem; line-height: 1.6; color: #9895AB; max-width: 34rem; margin: 0 0 2rem; }
+                .kw-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; }
+                .kw-note { margin-top: 1.1rem; font-size: 0.85rem; color: #676479; }
 
-                .akwt-nav-links {
-                    display: flex;
-                    align-items: center;
-                    gap: 2rem;
-                    list-style: none;
-                    padding: 0;
-                    margin: 0;
+                .kw-phones { position: relative; display: flex; justify-content: center; align-items: flex-start; min-height: 560px; }
+                .kw-phone {
+                    border-radius: 38px; padding: 9px; background: #16151f; border: 1px solid #3a384a;
+                    box-shadow: 0 30px 70px rgba(0,0,0,0.55), 0 0 60px rgba(172,135,255,0.18);
                 }
+                .kw-phone img { display: block; width: 100%; height: auto; border-radius: 30px; }
+                .kw-phone-a { width: min(250px, 44vw); transform: rotate(-5deg) translateY(30px); }
+                .kw-phone-b { width: min(250px, 44vw); transform: rotate(5deg); margin-left: -34px; }
 
-                .akwt-nav-links a {
-                    color: #8ba8cc;
-                    text-decoration: none;
-                    font-size: 0.9rem;
-                    font-weight: 500;
-                    transition: color 0.2s;
+                .kw-section { max-width: 1100px; margin: 0 auto; padding: 4rem clamp(1.25rem, 5vw, 4rem); }
+                .kw-label { font-size: 0.8rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.8rem; }
+                .kw-title { font-size: clamp(1.9rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.08; margin: 0 0 1rem; }
+                .kw-sub { color: #9895AB; font-size: 1.1rem; line-height: 1.65; max-width: 36rem; }
+
+                .kw-row { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; padding: 3rem 0; }
+                .kw-row.rev .kw-row-media { order: -1; }
+                .kw-row-media { display: flex; justify-content: center; }
+                .kw-row-media .kw-phone { width: min(290px, 70vw); }
+                .kw-points { list-style: none; margin: 1.5rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.7rem; }
+                .kw-points li { display: flex; gap: 12px; align-items: flex-start; color: #D8D6E6; font-size: 1.02rem; line-height: 1.5; }
+                .kw-dot { flex: 0 0 auto; width: 9px; height: 9px; border-radius: 50%; margin-top: 0.5rem; }
+
+                .kw-extras { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
+                .kw-card { background: #15141E; border: 1px solid #262436; border-radius: 22px; padding: 1.6rem; }
+                .kw-card h3 { margin: 0 0 0.5rem; font-size: 1.15rem; font-weight: 700; }
+                .kw-card p { margin: 0; color: #9895AB; font-size: 0.97rem; line-height: 1.6; }
+
+                .kw-anilist { display: flex; align-items: center; gap: 1.25rem; background: #15141E; border: 1px solid #262436; border-radius: 22px; padding: 1.5rem 1.75rem; }
+                .kw-anilist b { font-size: 1.05rem; }
+                .kw-anilist p { margin: 0.25rem 0 0; color: #9895AB; font-size: 0.97rem; line-height: 1.6; }
+                .kw-anilist a { color: #FF5E97; }
+                .kw-al { flex: 0 0 auto; width: 52px; height: 52px; border-radius: 14px; background: rgba(172,135,255,0.15); color: #AC87FF; display: grid; place-items: center; font-weight: 800; }
+
+                .kw-cta { text-align: center; padding: 5rem clamp(1.25rem, 5vw, 4rem); position: relative; }
+                .kw-cta h2 { font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 800; letter-spacing: -0.03em; margin: 0 0 1rem; }
+                .kw-cta p { color: #9895AB; font-size: 1.1rem; margin: 0 auto 2rem; max-width: 30rem; }
+                .kw-cta .kw-actions { justify-content: center; }
+
+                .kw-footer {
+                    border-top: 1px solid #262436; padding: 2rem clamp(1.25rem, 5vw, 4rem);
+                    display: flex; flex-wrap: wrap; gap: 1.25rem; align-items: center; justify-content: space-between;
                 }
-
-                .akwt-nav-links a:hover { color: #7ae8ff; }
-
-                .akwt-btn-primary {
-                    background: linear-gradient(135deg, #1aabcc, #7ae8ff);
-                    color: #070e27;
-                    border: none;
-                    padding: 0.55rem 1.4rem;
-                    border-radius: 50px;
-                    font-size: 0.88rem;
-                    font-weight: 700;
-                    cursor: pointer;
-                    text-decoration: none;
-                    display: inline-flex;
-                    align-items: center;
-                    gap: 6px;
-                    transition: all 0.25s;
-                }
-
-                .akwt-btn-primary:hover {
-                    transform: translateY(-2px);
-                    box-shadow: 0 8px 24px rgba(122,232,255,0.35);
-                }
-
-                .akwt-hero {
-                    min-height: 100vh;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    position: relative;
-                    overflow: hidden;
-                    padding: 100px clamp(1.5rem, 5vw, 4rem) 80px;
-                }
-
-                .akwt-hero-bg {
-                    position: absolute;
-                    inset: 0;
-                    background:
-                        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(26,171,204,0.18) 0%, transparent 70%),
-                        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(122,232,255,0.08) 0%, transparent 60%),
-                        radial-gradient(ellipse 50% 40% at 10% 60%, rgba(26,171,204,0.06) 0%, transparent 60%);
-                    pointer-events: none;
-                }
-
-                .akwt-hero-grid {
-                    position: absolute;
-                    inset: 0;
-                    background-image:
-                        linear-gradient(rgba(122,232,255,0.04) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(122,232,255,0.04) 1px, transparent 1px);
-                    background-size: 60px 60px;
-                    pointer-events: none;
-                    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
-                    -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
-                }
-
-                .akwt-hero-inner {
-                    position: relative;
-                    z-index: 1;
-                    max-width: 800px;
-                    width: 100%;
-                    text-align: center;
-                    margin: 0 auto;
-                }
-
-                .akwt-hero-badge {
-                    display: inline-flex;
-                    align-items: center;
-                    gap: 8px;
-                    background: rgba(122,232,255,0.08);
-                    border: 1px solid rgba(122,232,255,0.25);
-                    border-radius: 50px;
-                    padding: 6px 16px 6px 10px;
-                    font-size: 0.8rem;
-                    font-weight: 600;
-                    color: #7ae8ff;
-                    margin-bottom: 2rem;
-                }
-
-                .akwt-badge-dot {
-                    width: 8px; height: 8px;
-                    background: #7ae8ff;
-                    border-radius: 50%;
-                    animation: pulseDot 2s infinite;
-                }
-
-                @keyframes pulseDot {
-                    0%, 100% { opacity: 1; transform: scale(1); }
-                    50% { opacity: 0.5; transform: scale(0.8); }
-                }
-
-                .akwt-hero h1 {
-                    font-size: clamp(3rem, 6vw, 5rem);
-                    font-weight: 900;
-                    letter-spacing: -0.04em;
-                    line-height: 1.05;
-                    margin-bottom: 1.5rem;
-                    color: #f0f8ff;
-                }
-
-                .akwt-gradient-text {
-                    background: linear-gradient(135deg, #fff 0%, #7ae8ff 60%, #1aabcc 100%);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    background-clip: text;
-                }
-
-                .akwt-hero-desc {
-                    font-size: 1.15rem;
-                    line-height: 1.8;
-                    color: #8ba8cc;
-                    margin-bottom: 2.5rem;
-                    max-width: 560px;
-                    margin-left: auto;
-                    margin-right: auto;
-                }
-
-                .akwt-hero-actions {
-                    display: flex;
-                    gap: 1rem;
-                    flex-wrap: wrap;
-                    justify-content: center;
-                }
-
-                .akwt-btn-ghost {
-                    background: transparent;
-                    color: #8ba8cc;
-                    border: 1px solid #1a2d5a;
-                    padding: 0.65rem 1.4rem;
-                    border-radius: 50px;
-                    font-size: 0.88rem;
-                    font-weight: 600;
-                    cursor: pointer;
-                    text-decoration: none;
-                    display: inline-flex;
-                    align-items: center;
-                    gap: 6px;
-                    transition: all 0.25s;
-                }
-
-                .akwt-btn-ghost:hover {
-                    border-color: #7ae8ff;
-                    color: #7ae8ff;
-                    background: rgba(122,232,255,0.08);
-                }
-
-                .akwt-btn-lg {
-                    padding: 0.85rem 2rem;
-                    font-size: 1rem;
-                    font-weight: 700;
-                    border-radius: 50px;
-                }
-
-                .akwt-hero-scroll {
-                    margin-top: 4rem;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 8px;
-                    color: #8ba8cc;
-                    font-size: 0.75rem;
-                    font-weight: 500;
-                    letter-spacing: 0.1em;
-                    text-transform: uppercase;
-                }
-
-                .akwt-scroll-arrow {
-                    width: 1px;
-                    height: 40px;
-                    background: linear-gradient(to bottom, #1a2d5a, transparent);
-                    animation: scrollPulse 2s infinite;
-                }
-
-                @keyframes scrollPulse {
-                    0%, 100% { opacity: 0.4; }
-                    50% { opacity: 1; }
-                }
-
-                .akwt-section {
-                    padding: 100px clamp(1.5rem, 5vw, 4rem);
-                    max-width: 1200px;
-                    margin: 0 auto;
-                }
-
-                .akwt-section-label {
-                    font-size: 0.78rem;
-                    font-weight: 700;
-                    text-transform: uppercase;
-                    letter-spacing: 0.15em;
-                    color: #7ae8ff;
-                    margin-bottom: 1rem;
-                    display: flex;
-                    align-items: center;
-                    gap: 10px;
-                    justify-content: center;
-                }
-
-                .akwt-section-label::before {
-                    content: '';
-                    display: block;
-                    width: 24px; height: 2px;
-                    background: #7ae8ff;
-                    border-radius: 2px;
-                }
-
-                .akwt-section-label::after {
-                    content: '';
-                    display: block;
-                    width: 24px; height: 2px;
-                    background: #7ae8ff;
-                    border-radius: 2px;
-                }
-
-                .akwt-section-title {
-                    font-size: clamp(2rem, 4vw, 3rem);
-                    font-weight: 800;
-                    letter-spacing: -0.04em;
-                    line-height: 1.1;
-                    margin-bottom: 1rem;
-                    color: #f0f8ff;
-                    text-align: center;
-                }
-
-                .akwt-section-sub {
-                    font-size: 1.05rem;
-                    color: #8ba8cc;
-                    max-width: 560px;
-                    line-height: 1.7;
-                    text-align: center;
-                    margin: 0 auto;
-                }
-
-                .akwt-features-wrap {
-                    background: linear-gradient(180deg, #070e27 0%, #0a1430 50%, #070e27 100%);
-                    position: relative;
-                }
-
-                .akwt-features-wrap::before {
-                    content: '';
-                    position: absolute;
-                    inset: 0;
-                    background: radial-gradient(ellipse 80% 50% at 50% 50%, rgba(26,171,204,0.06) 0%, transparent 70%);
-                    pointer-events: none;
-                }
-
-                .akwt-features-grid {
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    gap: 1.5rem;
-                    margin-top: 3.5rem;
-                }
-
-                .akwt-feature-card {
-                    background: #111e42;
-                    border: 1px solid #1a2d5a;
-                    border-radius: 20px;
-                    padding: 2rem;
-                    transition: all 0.3s;
-                    position: relative;
-                    overflow: hidden;
-                }
-
-                .akwt-feature-card:hover {
-                    border-color: rgba(122,232,255,0.35);
-                    transform: translateY(-4px);
-                    box-shadow: 0 20px 48px rgba(0,0,0,0.3), 0 0 0 1px rgba(122,232,255,0.1);
-                }
-
-                .akwt-feature-card::before {
-                    content: '';
-                    position: absolute;
-                    top: 0; left: 0; right: 0;
-                    height: 1px;
-                    background: linear-gradient(90deg, transparent, rgba(122,232,255,0.4), transparent);
-                    opacity: 0;
-                    transition: opacity 0.3s;
-                }
-
-                .akwt-feature-card:hover::before { opacity: 1; }
-
-                .akwt-feature-icon {
-                    width: 52px; height: 52px;
-                    background: rgba(122,232,255,0.08);
-                    border: 1px solid rgba(122,232,255,0.2);
-                    border-radius: 14px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    color: #7ae8ff;
-                    margin-bottom: 1.25rem;
-                }
-
-                .akwt-feature-icon svg { width: 26px; height: 26px; }
-
-                .akwt-feature-title {
-                    font-size: 1.05rem;
-                    font-weight: 700;
-                    margin-bottom: 0.6rem;
-                    letter-spacing: -0.02em;
-                    color: #f0f8ff;
-                }
-
-                .akwt-feature-desc {
-                    font-size: 0.9rem;
-                    color: #8ba8cc;
-                    line-height: 1.65;
-                }
-
-                .akwt-anilist-section {
-                    padding: 0 clamp(1.5rem, 5vw, 4rem) 80px;
-                    max-width: 1200px;
-                    margin: 0 auto;
-                }
-
-                .akwt-anilist-card {
-                    background: linear-gradient(135deg, #111e42 0%, #0d1a3a 100%);
-                    border: 1px solid #1a2d5a;
-                    border-radius: 24px;
-                    padding: 3rem;
-                    display: flex;
-                    align-items: center;
-                    gap: 2rem;
-                    position: relative;
-                    overflow: hidden;
-                }
-
-                .akwt-anilist-card::before {
-                    content: '';
-                    position: absolute;
-                    top: -50px; right: -50px;
-                    width: 300px; height: 300px;
-                    background: radial-gradient(circle, rgba(2,169,244,0.12) 0%, transparent 70%);
-                    pointer-events: none;
-                }
-
-                .akwt-anilist-icon {
-                    width: 72px; height: 72px;
-                    background: linear-gradient(135deg, #0288d1, #01579b);
-                    border-radius: 20px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-size: 1.5rem;
-                    font-weight: 900;
-                    color: white;
-                    flex-shrink: 0;
-                    box-shadow: 0 8px 24px rgba(2,136,209,0.35);
-                }
-
-                .akwt-anilist-title {
-                    font-size: 1.3rem;
-                    font-weight: 800;
-                    letter-spacing: -0.03em;
-                    margin-bottom: 0.5rem;
-                    color: #f0f8ff;
-                }
-
-                .akwt-anilist-desc {
-                    font-size: 0.92rem;
-                    color: #8ba8cc;
-                    line-height: 1.6;
-                    margin: 0;
-                }
-
-                .akwt-anilist-link {
-                    color: #4dd0e1;
-                    text-decoration: none;
-                    font-weight: 600;
-                    transition: color 0.2s;
-                }
-
-                .akwt-anilist-link:hover { color: #7ae8ff; }
-
-                .akwt-cta-section {
-                    text-align: center;
-                    padding: 100px clamp(1.5rem, 5vw, 4rem);
-                    position: relative;
-                    overflow: hidden;
-                }
-
-                .akwt-cta-section::before {
-                    content: '';
-                    position: absolute;
-                    top: 0; left: 50%; transform: translateX(-50%);
-                    width: 700px; height: 700px;
-                    background: radial-gradient(circle, rgba(26,171,204,0.1) 0%, transparent 70%);
-                    pointer-events: none;
-                }
-
-                .akwt-cta-section h2 {
-                    font-size: clamp(2rem, 4vw, 3.2rem);
-                    font-weight: 900;
-                    letter-spacing: -0.04em;
-                    line-height: 1.1;
-                    margin-bottom: 1.25rem;
-                    position: relative;
-                    z-index: 1;
-                    color: #f0f8ff;
-                }
-
-                .akwt-cta-section p {
-                    font-size: 1.05rem;
-                    color: #8ba8cc;
-                    margin-bottom: 2.5rem;
-                    max-width: 480px;
-                    margin-left: auto;
-                    margin-right: auto;
-                    line-height: 1.7;
-                    position: relative;
-                    z-index: 1;
-                }
-
-                .akwt-cta-actions {
-                    display: flex;
-                    gap: 1rem;
-                    justify-content: center;
-                    flex-wrap: wrap;
-                    position: relative;
-                    z-index: 1;
-                }
-
-                .akwt-footer {
-                    border-top: 1px solid #1a2d5a;
-                    padding: 2.5rem clamp(1.5rem, 5vw, 4rem);
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    flex-wrap: wrap;
-                    gap: 1rem;
-                }
-
-                .akwt-footer-brand {
-                    display: flex;
-                    align-items: center;
-                    gap: 10px;
-                    font-size: 0.9rem;
-                    font-weight: 700;
-                    color: #8ba8cc;
-                    text-decoration: none;
-                }
-
-                .akwt-footer-links {
-                    display: flex;
-                    gap: 1.5rem;
-                    list-style: none;
-                    padding: 0;
-                    margin: 0;
-                }
-
-                .akwt-footer-links a {
-                    color: #8ba8cc;
-                    text-decoration: none;
-                    font-size: 0.82rem;
-                    font-weight: 500;
-                    transition: color 0.2s;
-                }
-
-                .akwt-footer-links a:hover { color: #7ae8ff; }
-
-                .akwt-footer-copy {
-                    font-size: 0.78rem;
-                    color: #8ba8cc;
-                    opacity: 0.6;
-                }
+                .kw-footer ul { display: flex; flex-wrap: wrap; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
+                .kw-footer a { color: #9895AB; font-size: 0.92rem; }
+                .kw-footer a:hover { color: #FF5E97; }
+                .kw-copy { color: #676479; font-size: 0.85rem; }
 
                 @media (max-width: 900px) {
-                    .akwt-features-grid { grid-template-columns: repeat(2, 1fr); }
-                    .akwt-nav-links { display: none; }
-                    .akwt-anilist-card { flex-direction: column; text-align: center; }
+                    .kw-nav-links { display: none; }
+                    .kw-hero { grid-template-columns: 1fr; padding-top: 110px; text-align: center; }
+                    .kw-hero p { margin-left: auto; margin-right: auto; }
+                    .kw-actions { justify-content: center; }
+                    .kw-phones { min-height: 440px; }
+                    .kw-row, .kw-row.rev { grid-template-columns: 1fr; gap: 2rem; text-align: left; }
+                    .kw-row.rev .kw-row-media { order: 0; }
+                    .kw-extras { grid-template-columns: 1fr 1fr; }
                 }
-
-                @media (max-width: 580px) {
-                    .akwt-features-grid { grid-template-columns: 1fr; }
-                    .akwt-footer { flex-direction: column; text-align: center; }
+                @media (max-width: 560px) {
+                    .kw-extras { grid-template-columns: 1fr; }
+                    .kw-anilist { flex-direction: column; align-items: flex-start; }
                 }
             `}</style>
 
-            <div className="akwt-root">
-                <nav className="akwt-nav">
-                    <Link href="/anime-kw-track" className="akwt-nav-brand">
-                        <Image src="/icon.png" alt="Anime KW Track" width={36} height={36} style={{ borderRadius: 10 }} />
-                        <span>Anime KW Track</span>
+            <div className="kw-root">
+                <nav className="kw-nav">
+                    <Link href="/anime-kw-track" className="kw-brand">
+                        <Image src="/kawaii-animes/icono.png" alt="Kawaii Animes" width={36} height={36} style={{ borderRadius: 10 }} />
+                        Kawaii Animes
                     </Link>
-                    <ul className="akwt-nav-links">
-                        <li><a href="#features">Características</a></li>
-                        <li><a href="#anilist">AniList</a></li>
+                    <ul className="kw-nav-links">
+                        <li><a href="#funciones">Funciones</a></li>
                         <li><Link href="/anime-kw-track/privacy">Privacidad</Link></li>
+                        <li><Link href="/anime-kw-track/terms">Términos</Link></li>
+                        <li><Link href="/anime-kw-track/dmca">DMCA</Link></li>
                     </ul>
-                    <a href="#download" className="akwt-btn-primary">
-                        <svg viewBox="0 0 24 24" fill="currentColor" style={{ width: 15, height: 15 }}>
-                            <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.4c1.39.07 2.35.74 3.16.8 1.21-.24 2.37-.94 3.68-.84 1.56.12 2.74.72 3.51 1.84-3.21 1.93-2.75 6.28.65 7.54-.7 1.74-1.52 3.36-3 4.54zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
-                        </svg>
+                    <a href={PLAY_URL} target="_blank" rel="noopener noreferrer" className="kw-btn kw-btn-primary">
                         Descargar
                     </a>
                 </nav>
 
-                <section className="akwt-hero">
-                    <div className="akwt-hero-bg" />
-                    <div className="akwt-hero-grid" />
-                    <div className="akwt-hero-inner">
-                        <div className="akwt-hero-badge">
-                            <span className="akwt-badge-dot" />
-                            Datos en tiempo real · AniList API
-                        </div>
+                <header className="kw-hero">
+                    <div className="kw-glow" style={{ width: 460, height: 460, left: "-8%", top: "8%", background: "rgba(255,94,151,0.28)" }} />
+                    <div className="kw-glow" style={{ width: 420, height: 420, right: "-4%", top: "4%", background: "rgba(172,135,255,0.28)" }} />
+                    <div>
+                        <div className="kw-badge">Para Android</div>
                         <h1>
-                            Tu tracker de anime
+                            Tus estrenos,
                             <br />
-                            <span className="akwt-gradient-text">definitivo</span>
+                            <span className="kw-grad">a tu hora</span>
                         </h1>
-                        <p className="akwt-hero-desc">
-                            Sigue todas tus series en un solo lugar. Recibe notificaciones de nuevos episodios,
-                            organiza tus favoritos y nunca pierdas un estreno.
+                        <p>
+                            Kawaii Animes te dice cuándo sale cada capítulo de los animes que sigues, en la hora de tu zona, y te
+                            avisa para que no se te pase ninguno.
                         </p>
-                        <div className="akwt-hero-actions">
-                            <a href="#download" className="akwt-btn-primary akwt-btn-lg">
-                                Descargar gratis
+                        <div className="kw-actions">
+                            <a href={PLAY_URL} target="_blank" rel="noopener noreferrer" className="kw-btn kw-btn-primary kw-btn-lg">
+                                Descargar en Google Play
                             </a>
-                            <a href="#features" className="akwt-btn-ghost akwt-btn-lg">
-                                Ver características
+                            <a href="#funciones" className="kw-btn kw-btn-ghost kw-btn-lg">
+                                Ver funciones
                             </a>
                         </div>
-                        <div className="akwt-hero-scroll">
-                            <div className="akwt-scroll-arrow" />
+                        <div className="kw-note">Gratis, con anuncios.</div>
+                    </div>
+                    <div className="kw-phones">
+                        <div className="kw-phone kw-phone-a">
+                            <Image src="/kawaii-animes/inicio.webp" alt="Pantalla de inicio de Kawaii Animes" width={600} height={1300} priority />
+                        </div>
+                        <div className="kw-phone kw-phone-b">
+                            <Image src="/kawaii-animes/mi-lista.webp" alt="Mi lista en Kawaii Animes" width={600} height={1300} priority />
                         </div>
                     </div>
-                </section>
+                </header>
 
-                <section id="features" className="akwt-features-wrap">
-                    <div className="akwt-section">
-                        <div className="akwt-section-label">Características</div>
-                        <h2 className="akwt-section-title">
-                            Todo lo que necesitas
-                            <br />
-                            para seguir tu anime
-                        </h2>
-                        <p className="akwt-section-sub">
-                            Diseñado para fans del anime. Sin complicaciones, sin distracciones.
-                            Solo tus series, tus notificaciones y tu lista.
-                        </p>
-                        <div className="akwt-features-grid">
-                            {features.map((f, i) => (
-                                <div key={i} className="akwt-feature-card">
-                                    <div className="akwt-feature-icon">{f.icon}</div>
-                                    <div className="akwt-feature-title">{f.title}</div>
-                                    <div className="akwt-feature-desc">{f.desc}</div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                <div id="anilist">
-                    <div className="akwt-anilist-section">
-                        <div className="akwt-anilist-card">
-                            <div className="akwt-anilist-icon">AL</div>
+                <section id="funciones" className="kw-section">
+                    {rows.map((r, i) => (
+                        <div key={r.tag} className={`kw-row${i % 2 === 1 ? " rev" : ""}`}>
                             <div>
-                                <div className="akwt-anilist-title">Impulsado por AniList</div>
-                                <p className="akwt-anilist-desc">
-                                    Toda la información sobre series, episodios, fechas de emisión y portadas proviene
-                                    de{" "}
-                                    <a href="https://anilist.co" target="_blank" rel="noopener noreferrer" className="akwt-anilist-link">
-                                        AniList
-                                    </a>
-                                    , la base de datos de anime y manga más completa.
-                                    Los datos de los animes y sus imágenes son propiedad de sus respectivos titulares
-                                    (estudios de animación y distribuidores).
-                                </p>
+                                <div className="kw-label" style={{ color: r.color }}>{r.tag}</div>
+                                <h2 className="kw-title">
+                                    {r.title.split(r.accent)[0]}
+                                    <span style={{ color: r.color }}>{r.accent}</span>
+                                    {r.title.split(r.accent)[1]}
+                                </h2>
+                                <p className="kw-sub">{r.text}</p>
+                                <ul className="kw-points">
+                                    {r.points.map((p) => (
+                                        <li key={p}>
+                                            <span className="kw-dot" style={{ background: r.color }} />
+                                            {p}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div className="kw-row-media">
+                                <div className="kw-phone">
+                                    <Image src={`/kawaii-animes/${r.img}.webp`} alt={`${r.tag} en Kawaii Animes`} width={600} height={1300} />
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    ))}
+                </section>
 
-                <section id="download" className="akwt-cta-section">
-                    <div className="akwt-hero-grid" style={{ opacity: 0.4 }} />
-                    <h2>
-                        Empieza a seguir tu anime
-                        <br />
-                        <span className="akwt-gradient-text">hoy mismo</span>
-                    </h2>
-                    <p>
-                        Gratis, sin anuncios intrusivos. Disponible para <strong style={{ color: '#c8dff5' }}>Android</strong>.<br />
-                        Inicia sesión con Google para sincronizar tus favoritos entre dispositivos.
-                    </p>
-                    <div className="akwt-cta-actions">
-                        <a
-                            href="https://play.google.com/store/apps/details?id=com.lumekostudio.animekwtrack"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="akwt-btn-primary akwt-btn-lg"
-                        >
-                            <svg viewBox="0 0 24 24" fill="currentColor" style={{ width: 18, height: 18 }}>
-                                <path d="M3.18 23.76c.37.21.8.22 1.18.04L14.6 12 4.36.2C3.98.02 3.55.03 3.18.24 2.44.66 2 1.43 2 2.28v19.44c0 .85.44 1.62 1.18 2.04zm4.93-14.4l2.17 2.17-6.73 3.88 4.56-6.05zm9.07 5.23l-2.56 1.48-2.38-2.38 2.38-2.38 2.56 1.48c.73.42.73 1.48 0 1.8zm-11.64 4.4l6.73 3.88-2.17 2.17-4.56-6.05z" />
-                            </svg>
-                            Descargar en Google Play
-                        </a>
-                        <Link href="/anime-kw-track/privacy" className="akwt-btn-ghost akwt-btn-lg">
-                            Política de privacidad
-                        </Link>
+                <section className="kw-section" style={{ paddingTop: 0 }}>
+                    <div className="kw-label" style={{ color: "#FF5E97" }}>Y además</div>
+                    <h2 className="kw-title">Los detalles que se agradecen</h2>
+                    <div className="kw-extras">
+                        {extras.map((e) => (
+                            <div key={e.title} className="kw-card">
+                                <h3>{e.title}</h3>
+                                <p>{e.desc}</p>
+                            </div>
+                        ))}
                     </div>
                 </section>
 
-                <footer className="akwt-footer">
-                    <Link href="/" className="akwt-footer-brand">
-                        <Image src="/icon.png" alt="Anime KW Track" width={28} height={28} style={{ borderRadius: 8 }} />
-                        Anime KW Track · Lumeko Studio
+                <section className="kw-section" style={{ paddingTop: 0 }}>
+                    <div className="kw-anilist">
+                        <div className="kw-al">AL</div>
+                        <div>
+                            <b>Datos de AniList</b>
+                            <p>
+                                La información de los animes viene de{" "}
+                                <a href="https://anilist.co" target="_blank" rel="noopener noreferrer">AniList</a>. Kawaii Animes no
+                                ofrece episodios para ver: te dice en qué plataformas están disponibles.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="kw-cta">
+                    <div className="kw-glow" style={{ width: 520, height: 320, left: "50%", top: "10%", transform: "translateX(-50%)", background: "rgba(255,94,151,0.2)" }} />
+                    <div style={{ position: "relative", zIndex: 1 }}>
+                        <h2>
+                            No te pierdas <span className="kw-grad">ningún capítulo</span>
+                        </h2>
+                        <p>Descarga Kawaii Animes y ten tus estrenos siempre a la mano.</p>
+                        <div className="kw-actions">
+                            <a href={PLAY_URL} target="_blank" rel="noopener noreferrer" className="kw-btn kw-btn-primary kw-btn-lg">
+                                Descargar en Google Play
+                            </a>
+                            <Link href="/anime-kw-track/privacy" className="kw-btn kw-btn-ghost kw-btn-lg">
+                                Política de privacidad
+                            </Link>
+                        </div>
+                    </div>
+                </section>
+
+                <footer className="kw-footer">
+                    <Link href="/anime-kw-track" className="kw-brand" style={{ fontSize: "1rem" }}>
+                        <Image src="/kawaii-animes/icono.png" alt="Kawaii Animes" width={28} height={28} style={{ borderRadius: 8 }} />
+                        Kawaii Animes · Lumeko Studio
                     </Link>
-                    <ul className="akwt-footer-links">
+                    <ul>
                         <li><Link href="/anime-kw-track/privacy">Privacidad</Link></li>
+                        <li><Link href="/anime-kw-track/delete-account">Eliminar cuenta</Link></li>
                         <li><Link href="/anime-kw-track/terms">Términos</Link></li>
                         <li><Link href="/anime-kw-track/dmca">DMCA</Link></li>
                         <li><a href="mailto:soporte@lumekostudio.com">Contacto</a></li>
                     </ul>
-                    <span className="akwt-footer-copy">© {new Date().getFullYear()} Lumeko Studio</span>
+                    <span className="kw-copy">© {new Date().getFullYear()} Lumeko Studio</span>
                 </footer>
             </div>
         </div>
