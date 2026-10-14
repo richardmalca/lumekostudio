@@ -393,6 +393,11 @@ export default function PrivacyPolicy() {
                                 tu correo, la versión de la app y el tipo de dispositivo.
                             </li>
                             <li>
+                                <strong>Salas de espera (chat):</strong> los mensajes que escribes en la sala de un capítulo, tu
+                                primer nombre, tu identificador de usuario y la hora. Los ven quienes siguen el mismo anime. Si
+                                reportas un mensaje, guardamos ese mensaje, a quien lo escribió y a quien lo reportó para revisarlo.
+                            </li>
+                            <li>
                                 <strong>Datos técnicos y de uso:</strong> identificadores de instalación y del dispositivo, el
                                 identificador para recibir notificaciones, registros de errores, diagnósticos e interacciones con
                                 la app (por ejemplo, qué pantallas se abren o si agregas un anime a tu lista). No registramos el
@@ -471,7 +476,9 @@ export default function PrivacyPolicy() {
                         <h2>6. Cuánto tiempo guardamos los datos</h2>
                         <p>
                             Guardamos los datos de tu cuenta, tu lista y tus ajustes mientras tengas la cuenta. Los mensajes de
-                            Ayuda y sugerencias se conservan para atender tu consulta. Los datos de analítica y errores se
+                            Ayuda y sugerencias se conservan para atender tu consulta. Los mensajes y la presencia de las salas
+                            de espera se borran solos pocas horas después del estreno del capítulo; los reportes se conservan
+                            para moderar. Los datos de analítica y errores se
                             conservan durante el periodo de retención de Firebase.
                         </p>
                     </div>

@@ -416,7 +416,17 @@ export default function TermsAndConditions() {
                     </div>
 
                     <div className="akwt-legal-section">
-                        <h2>4. Uso aceptable</h2>
+                        <h2>4. Salas de espera (chat)</h2>
+                        <p>
+                            Las salas de espera son un espacio público entre quienes siguen un anime. En ellas no puedes escribir
+                            insultos, acoso, odio, amenazas, spam, enlaces ni datos personales. Podemos revisar los mensajes
+                            reportados, borrarlos, silenciar cuentas o quitar el acceso al chat a quien incumpla estas normas. Puedes
+                            reportar un mensaje o bloquear a una persona con la bandera que aparece junto a él.
+                        </p>
+                    </div>
+
+                    <div className="akwt-legal-section">
+                        <h2>5. Uso aceptable</h2>
                         <p>Al usar Kawaii Animes te comprometes a:</p>
                         <ul>
                             <li>No usar la app para fines ilegales o no autorizados.</li>
@@ -427,7 +437,7 @@ export default function TermsAndConditions() {
                     </div>
 
                     <div className="akwt-legal-section">
-                        <h2>5. Propiedad intelectual</h2>
+                        <h2>6. Propiedad intelectual</h2>
                         <p>
                             El diseño, el código y los materiales de Kawaii Animes son de <strong>Lumeko Studio</strong>, salvo que
                             se indique lo contrario. La información sobre los animes (títulos, portadas, sinopsis) viene de{" "}
@@ -438,7 +448,7 @@ export default function TermsAndConditions() {
                     </div>
 
                     <div className="akwt-legal-section">
-                        <h2>6. Limitación de responsabilidad</h2>
+                        <h2>7. Limitación de responsabilidad</h2>
                         <p>
                             Lumeko Studio no se responsabiliza por inexactitudes en las fechas y horas de emisión, por
                             interrupciones del servicio ni por la pérdida de datos derivada del uso de la app. El servicio se
@@ -447,7 +457,7 @@ export default function TermsAndConditions() {
                     </div>
 
                     <div className="akwt-legal-section">
-                        <h2>7. Cambios</h2>
+                        <h2>8. Cambios</h2>
                         <p>
                             Podemos actualizar estos términos en cualquier momento. Si el cambio es importante, lo avisaremos en la
                             app. Seguir usándola después del cambio significa que aceptas los nuevos términos.
@@ -455,7 +465,7 @@ export default function TermsAndConditions() {
                     </div>
 
                     <div className="akwt-legal-section">
-                        <h2>8. Contacto</h2>
+                        <h2>9. Contacto</h2>
                         <p>Para cualquier consulta sobre estos términos, escríbenos a:</p>
                         <a href="mailto:soporte@lumekostudio.com" className="akwt-legal-email">
                             soporte@lumekostudio.com
