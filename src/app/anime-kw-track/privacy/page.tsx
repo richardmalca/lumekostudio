@@ -396,6 +396,10 @@ export default function PrivacyPolicy() {
                                 <strong>Salas de espera (chat):</strong> los mensajes que escribes en la sala de un capítulo, tu
                                 primer nombre, tu identificador de usuario y la hora. Los ven quienes siguen el mismo anime. Si
                                 reportas un mensaje, guardamos ese mensaje, a quien lo escribió y a quien lo reportó para revisarlo.
+                                Al enviarse, cada mensaje pasa por un filtro automático de palabras graves; si lo incumple, no
+                                llega a las demás personas. Los mensajes que alguien reporta se analizan con el servicio de inteligencia
+                                artificial Gemini de Google (Vertex AI), que recibe solo el texto del mensaje, sin tu nombre ni tu
+                                identificador; Google no lo usa para entrenar sus modelos.
                             </li>
                             <li>
                                 <strong>Datos técnicos y de uso:</strong> identificadores de instalación y del dispositivo, el
